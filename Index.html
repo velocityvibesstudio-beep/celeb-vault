@@ -45,7 +45,7 @@
     </main>
 
     <script>
-        const allItems = JSON.parse('[{"name":"Monica Bellucci","category":"Exclusive AI Art","image":"https://ibb.co/7tnqmJ9w","quote":"The future belongs to those who believe in the beauty of their dreams.","likes":"12.7K"}]');
+        const allItems = JSON.parse('[{"name":"Monica Bellucci","category":"Exclusive AI Art","image":"https://i.ibb.co/N29MB648/Real-Photo-AI-Natural-lk-3-1786194613579.jpg","quote":"Success is not final; failure is not fatal: It is the courage to continue that counts.","likes":"12.6K"}]');
         let currentPage = 1;
         const itemsPerPage = 10;
 
@@ -65,7 +65,7 @@
             const currentItems = allItems.slice(startIndex, endIndex);
 
             let htmlContent = '';
-            currentItems.forEach(item => {
+            currentItems.forEach((item, index) => {
                 htmlContent += `
                 <div class="bg-slate-900 border border-slate-800/80 rounded-2xl overflow-hidden shadow-2xl mb-6">
                     <div class="p-3 flex justify-between items-center border-b border-slate-800/50">
@@ -118,7 +118,7 @@
                                 <i class="fa-solid fa-heart text-rose-500"></i>
                                 <span>${item.likes}</span>
                             </div>
-                            <a href="${item.image}" target="_blank"
+                            <a href="${item.image}" download="IconicVault-${index}.jpg" target="_blank"
                                class="flex items-center gap-1 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 px-3 py-1.5 rounded-lg text-xs font-medium border border-amber-500/20 transition">
                                 <i class="fa-solid fa-download"></i> Save HD
                             </a>
