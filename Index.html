@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iconic Italy - Official Store & Gallery</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Stable Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Adsterra Global Ad Scripts -->
@@ -100,14 +101,29 @@
 
     </main>
 
+    <!-- Bulletproof Data Injection -->
+    <script id="products-data" type="application/json">
+[{"id":"1786340607108_0","title":"Meloni Mug","category":"Moda Uomo/Donna","price":"€29.99","oldPrice":"€49.99","image":"https://i.ibb.co/hFZp3Bfv/Real-Photo-AI-Natural-lk-2-1786298004693.jpg","checkoutLink":"https://iconic-italy.printify.me/product/30814879","adText":"🔥 Un'offerta imperdibile! Esclusivo design ispirato alla bellezza italiana. Qualità Premium garantita al 100%. Ordina oggi e approfitta della spedizione rapida in 24/48 ore!","rating":"4.8 ⭐ (153 Recensioni)"}]
+    </script>
+
     <script>
-        const allItems = JSON.parse('[{"id":"1786340237432_0","title":"Maglietta Premium AI Art 🇮🇹","category":"Moda Uomo/Donna","price":"€29.99","oldPrice":"€49.99","image":"https://i.ibb.co/hFZp3Bfv/Real-Photo-AI-Natural-lk-2-1786298004693.jpg","checkoutLink":"https://iconic-italy.printify.me/product/30814879","adText":"✨ Porta lo stile e l\'eleganza italiana sempre con te. Un capo unico, realizzato con cura per i veri intenditori. Pezzi limitati, acquista subito in sconto!","rating":"4.8 ⭐ (193 Recensioni)"}]');
+        let allItems = [];
+        try {
+            const rawData = document.getElementById('products-data').textContent;
+            allItems = JSON.parse(rawData);
+        } catch(e) {
+            console.error("Data parse error:", e);
+            allItems = [];
+        }
+
         let currentPage = 1;
         const itemsPerPage = 10;
 
         function renderGallery(page) {
             const container = document.getElementById('gallery-container');
             const paginationContainer = document.getElementById('pagination-container');
+            if (!container || !paginationContainer) return;
+
             container.innerHTML = '';
             paginationContainer.innerHTML = '';
 
@@ -133,16 +149,16 @@
                     <!-- Product Header -->
                     <div class="p-3.5 flex justify-between items-center border-b border-slate-800/80 bg-slate-900/90">
                         <div>
-                            <h3 class="text-xs font-black text-slate-100 tracking-wide">${item.title}</h3>
+                            <h3 class="text-xs font-black text-slate-100 tracking-wide">${item.title || 'Prodotto Esclusivo'}</h3>
                             <p class="text-[10px] text-amber-400 font-bold mt-0.5 flex items-center gap-1">
-                                ${item.rating}
+                                ${item.rating || '4.9 ⭐'}
                             </p>
                         </div>
                         <div class="text-right">
                             <div class="flex items-center gap-1.5">
                                 <span class="text-[10px] text-slate-500 line-through font-semibold">${item.oldPrice || ''}</span>
                                 <span class="text-xs bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black px-3 py-1 rounded-full shadow-lg shadow-amber-500/20">
-                                    ${item.price}
+                                    ${item.price || '€29.99'}
                                 </span>
                             </div>
                         </div>
@@ -150,7 +166,7 @@
 
                     <!-- Product Image Container -->
                     <div class="relative aspect-[4/5] bg-slate-950 overflow-hidden group">
-                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
                         
                         <div class="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-md text-amber-300 text-[9px] font-black px-2.5 py-1 rounded-lg border border-amber-500/30 uppercase tracking-widest flex items-center gap-1">
                             <i class="fa-solid fa-fire text-rose-500"></i> BEST SELLER
@@ -164,13 +180,13 @@
                     <!-- Italian Ad Copy Description -->
                     <div class="p-4 bg-slate-950/70 border-t border-slate-800/80">
                         <p class="text-xs text-slate-300 leading-relaxed font-medium italic">
-                            "${item.adText}"
+                            "${item.adText || ''}"
                         </p>
                     </div>
 
                     <!-- BUY NOW BUTTON (Direct Order Link) -->
                     <div class="p-4 pt-1">
-                        <a href="${item.checkoutLink}" target="_blank" rel="noopener font-black"
+                        <a href="${item.checkoutLink || 'https://t.me/iconicitaly'}" target="_blank" rel="noopener font-black"
                            class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 text-slate-950 font-black py-3.5 rounded-2xl text-xs shadow-xl shadow-amber-500/25 hover:brightness-110 active:scale-98 transition group">
                             <i class="fa-solid fa-cart-shopping text-sm group-hover:animate-bounce"></i> ACQUISTA ORA - SCONTO 30% ➔
                         </a>
@@ -184,28 +200,33 @@
 
                 container.appendChild(card);
 
-                // Dynamically append Adsterra script elements
-                const adContainer = card.querySelector(`.ad-wrapper-${index}`);
-                
-                // Native Ad
-                const nativeDiv = document.createElement('div');
-                nativeDiv.id = 'container-2d08a49360bea68cb6fef1b2954d6af5-' + index;
-                adContainer.appendChild(nativeDiv);
+                // Dynamically append Adsterra script elements safely
+                try {
+                    const adContainer = card.querySelector(`.ad-wrapper-${index}`);
+                    if (adContainer) {
+                        // Native Ad
+                        const nativeDiv = document.createElement('div');
+                        nativeDiv.id = 'container-2d08a49360bea68cb6fef1b2954d6af5-' + index;
+                        adContainer.appendChild(nativeDiv);
 
-                const nativeScript = document.createElement('script');
-                nativeScript.async = true;
-                nativeScript.dataset.cfasync = "false";
-                nativeScript.src = "https://pl30761943.effectivecpmnetwork.com/2d08a49360bea68cb6fef1b2954d6af5/invoke.js";
-                adContainer.appendChild(nativeScript);
+                        const nativeScript = document.createElement('script');
+                        nativeScript.async = true;
+                        nativeScript.dataset.cfasync = "false";
+                        nativeScript.src = "https://pl30761943.effectivecpmnetwork.com/2d08a49360bea68cb6fef1b2954d6af5/invoke.js";
+                        adContainer.appendChild(nativeScript);
 
-                // Banner 468x60
-                const bannerScript1 = document.createElement('script');
-                bannerScript1.innerHTML = "atOptions = { 'key' : '528c2baaa775a51f30609ead9051f321', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };";
-                adContainer.appendChild(bannerScript1);
+                        // Banner 468x60
+                        const bannerScript1 = document.createElement('script');
+                        bannerScript1.innerHTML = "atOptions = { 'key' : '528c2baaa775a51f30609ead9051f321', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };";
+                        adContainer.appendChild(bannerScript1);
 
-                const bannerInvoke1 = document.createElement('script');
-                bannerInvoke1.src = "https://www.highperformanceformat.com/528c2baaa775a51f30609ead9051f321/invoke.js";
-                adContainer.appendChild(bannerInvoke1);
+                        const bannerInvoke1 = document.createElement('script');
+                        bannerInvoke1.src = "https://www.highperformanceformat.com/528c2baaa775a51f30609ead9051f321/invoke.js";
+                        adContainer.appendChild(bannerInvoke1);
+                    }
+                } catch(adErr) {
+                    console.error("Ad append error:", adErr);
+                }
             });
 
             const totalPages = Math.ceil(allItems.length / itemsPerPage);
@@ -232,6 +253,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Initialize on Load
         renderGallery(currentPage);
     </script>
 </body>
