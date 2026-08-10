@@ -3,67 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iconic Italy - Official Store</title>
+    <title>Iconic Italy - Official Store & Gallery</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Adsterra Global Scripts -->
+    <!-- Adsterra Global Ad Scripts -->
     <script src="https://pl30761942.effectivecpmnetwork.com/c8/17/88/c81788b8748c5c0a12241805299e9328.js"></script>
     <script src="https://pl30761944.effectivecpmnetwork.com/a7/23/aa/a723aa4faaf211da9d6bd59adccc63d2.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans pb-16">
+<body class="bg-slate-950 text-slate-100 font-sans pb-20 selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 px-4 py-4 shadow-xl">
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-slate-950 font-black text-[11px] py-2 px-4 text-center tracking-wide uppercase shadow-md flex items-center justify-center gap-2">
+        <i class="fa-solid fa-truck-fast animate-bounce"></i>
+        <span>Spedizione Gratuita in Tutta Italia per Ordini Superiori a €40 | Sconto 30% Attivo</span>
+    </div>
+
+    <!-- Main Header -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800/80 px-4 py-3.5 shadow-2xl">
         <div class="max-w-md mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-shirt text-amber-400 animate-pulse"></i>
-                <h1 class="text-base font-black tracking-wider bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent">
-                    ICONIC ITALY STORE
-                </h1>
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-400 to-amber-200 flex items-center justify-center text-slate-950 shadow-md">
+                    <i class="fa-solid fa-bag-shopping text-sm"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm font-black tracking-wider bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent uppercase">
+                        ICONIC ITALY
+                    </h1>
+                    <p class="text-[9px] text-amber-400/80 font-semibold tracking-widest -mt-0.5">OFFICIAL STORE</p>
+                </div>
             </div>
             <a href="https://t.me/iconicitaly" target="_blank" 
-               class="text-xs bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-3 py-1.5 rounded-full transition flex items-center gap-1 shadow-lg shadow-amber-500/20">
-                <i class="fa-brands fa-telegram"></i> VIP Club
+               class="text-[11px] bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black px-3.5 py-1.5 rounded-full transition flex items-center gap-1.5 shadow-lg shadow-amber-500/20 active:scale-95">
+                <i class="fa-brands fa-telegram text-xs"></i> VIP Club
             </a>
         </div>
     </header>
 
-    <main class="max-w-md mx-auto px-4 mt-6">
+    <!-- Main Content Container -->
+    <main class="max-w-md mx-auto px-4 mt-5 space-y-6">
         
-        <!-- Top Banner Ad -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-2 mb-4 text-center overflow-hidden shadow-lg">
+        <!-- Top Adsterra Banner Slot -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-2 text-center overflow-hidden shadow-xl">
             <script>
               atOptions = { 'key' : '292388e6c887c71a96888fa0cc36941f', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
             </script>
             <script src="https://www.highperformanceformat.com/292388e6c887c71a96888fa0cc36941f/invoke.js"></script>
         </div>
 
-        <!-- Promo Hero Box -->
-        <div class="bg-gradient-to-r from-slate-900 to-slate-900 border border-amber-500/30 rounded-2xl p-5 mb-6 text-center shadow-xl">
-            <span class="bg-amber-500/10 text-amber-400 text-[10px] font-bold px-3 py-1 rounded-full border border-amber-500/20 uppercase tracking-widest">
-                Spedizione in Tutta Italia 🇮🇹
+        <!-- Hero Promotional Card -->
+        <div class="relative bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-amber-500/30 rounded-3xl p-5 text-center shadow-2xl overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+            <span class="inline-block bg-amber-500/15 text-amber-400 text-[10px] font-black px-3 py-1 rounded-full border border-amber-500/30 uppercase tracking-widest mb-2">
+                🇮🇹 Collezione Print on Demand 2026
             </span>
-            <h2 class="text-sm font-bold text-amber-300 mt-2 mb-1">Collezione Esclusiva Print on Demand</h2>
-            <p class="text-xs text-slate-400 mb-4">Capi unici stampati su ordinazione con materiali di altissima qualità.</p>
+            <h2 class="text-base font-black text-slate-100 leading-tight">Capi Unici & Design Ispirati all'Italia</h2>
+            <p class="text-xs text-slate-400 mt-1.5 mb-4 leading-relaxed">
+                Stampa ad alta definizione, materiali ecosostenibili e qualità artigianale garantita.
+            </p>
             <a href="https://t.me/iconicitaly" target="_blank"
-               class="block w-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold py-2.5 rounded-xl text-sm shadow-md text-center transition">
-                Unisciti al Canale Telegram
+               class="inline-flex items-center justify-center gap-2 w-full bg-slate-800 hover:bg-slate-700 text-amber-300 font-bold py-2.5 rounded-xl text-xs border border-amber-500/20 shadow-md transition active:scale-98">
+                <i class="fa-brands fa-telegram text-sm text-amber-400"></i> Entra Nel Canale VIP Telegram
             </a>
+        </div>
+
+        <!-- Trust Badges Bar -->
+        <div class="grid grid-cols-3 gap-2 bg-slate-900/60 border border-slate-800/80 rounded-2xl p-3 text-center">
+            <div class="flex flex-col items-center justify-center">
+                <i class="fa-solid fa-shield-halved text-amber-400 text-xs mb-1"></i>
+                <span class="text-[9px] font-bold text-slate-300">Pagamenti Sicuri</span>
+            </div>
+            <div class="flex flex-col items-center justify-center border-x border-slate-800">
+                <i class="fa-solid fa-truck-ramp-box text-amber-400 text-xs mb-1"></i>
+                <span class="text-[9px] font-bold text-slate-300">Reso Facile 14G</span>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <i class="fa-solid fa-award text-amber-400 text-xs mb-1"></i>
+                <span class="text-[9px] font-bold text-slate-300">Qualità Premium</span>
+            </div>
         </div>
 
         <!-- Products Feed Container -->
         <div id="gallery-container" class="space-y-6"></div>
         <div id="pagination-container" class="flex justify-between items-center mt-8"></div>
 
-        <footer class="mt-12 text-center text-xs text-slate-600">
+        <!-- Footer -->
+        <footer class="mt-14 text-center text-xs text-slate-600 space-y-2 border-t border-slate-800/80 pt-6">
+            <div class="flex justify-center items-center gap-3 text-slate-500 text-sm">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+                <i class="fa-brands fa-apple-pay"></i>
+            </div>
             <p>© 2026 Iconic Italy Store. Tutti i diritti riservati.</p>
         </footer>
 
     </main>
 
     <script>
-        const allItems = JSON.parse('[{"title":"Limited Edition Mug","price":"€29.99","image":"https://i.ibb.co/hFZp3Bfv/Real-Photo-AI-Natural-lk-2-1786298004693.jpg","adText":"🔥 Un\'offerta imperdibile! Esclusivo design ispirato alla bellezza italiana. Qualità Premium garantita al 100%. Ordina oggi e approfitta della spedizione rapida!","checkoutLink":"https://iconic-italy.printify.me/product/30814879","rating":"4.9 ⭐ (128 Recensioni)"}]');
+        const allItems = JSON.parse('[{"id":"1786340237432_0","title":"Maglietta Premium AI Art 🇮🇹","category":"Moda Uomo/Donna","price":"€29.99","oldPrice":"€49.99","image":"https://i.ibb.co/hFZp3Bfv/Real-Photo-AI-Natural-lk-2-1786298004693.jpg","checkoutLink":"https://iconic-italy.printify.me/product/30814879","adText":"✨ Porta lo stile e l\'eleganza italiana sempre con te. Un capo unico, realizzato con cura per i veri intenditori. Pezzi limitati, acquista subito in sconto!","rating":"4.8 ⭐ (193 Recensioni)"}]');
         let currentPage = 1;
         const itemsPerPage = 10;
 
@@ -74,7 +112,12 @@
             paginationContainer.innerHTML = '';
 
             if (!allItems || allItems.length === 0) {
-                container.innerHTML = '<p class="text-center text-xs text-slate-500 py-10">Nessun prodotto disponibile al momento.</p>';
+                container.innerHTML = `
+                    <div class="text-center py-12 px-4 bg-slate-900/50 border border-slate-800 rounded-3xl">
+                        <i class="fa-solid fa-box-open text-3xl text-amber-400/50 mb-3"></i>
+                        <p class="text-xs text-slate-400 font-medium">Nessun prodotto disponibile al momento nello store.</p>
+                    </div>
+                `;
                 return;
             }
 
@@ -84,53 +127,64 @@
 
             currentItems.forEach((item, index) => {
                 const card = document.createElement('div');
-                card.className = "bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl mb-6 transform transition hover:border-amber-500/50";
+                card.className = "bg-slate-900 border border-slate-800/90 rounded-3xl overflow-hidden shadow-2xl transform transition hover:border-amber-500/40";
                 
                 card.innerHTML = `
                     <!-- Product Header -->
                     <div class="p-3.5 flex justify-between items-center border-b border-slate-800/80 bg-slate-900/90">
                         <div>
-                            <h3 class="text-sm font-bold text-slate-100">${item.title}</h3>
-                            <p class="text-[10px] text-amber-400 font-bold mt-0.5">${item.rating}</p>
+                            <h3 class="text-xs font-black text-slate-100 tracking-wide">${item.title}</h3>
+                            <p class="text-[10px] text-amber-400 font-bold mt-0.5 flex items-center gap-1">
+                                ${item.rating}
+                            </p>
                         </div>
                         <div class="text-right">
-                            <span class="text-xs bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black px-3.5 py-1.5 rounded-full shadow-lg">
-                                ${item.price}
-                            </span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-[10px] text-slate-500 line-through font-semibold">${item.oldPrice || ''}</span>
+                                <span class="text-xs bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black px-3 py-1 rounded-full shadow-lg shadow-amber-500/20">
+                                    ${item.price}
+                                </span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Product Image Display -->
+                    <!-- Product Image Container -->
                     <div class="relative aspect-[4/5] bg-slate-950 overflow-hidden group">
                         <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-lg border border-amber-500/30">
-                            🔥 Best Seller
+                        
+                        <div class="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-md text-amber-300 text-[9px] font-black px-2.5 py-1 rounded-lg border border-amber-500/30 uppercase tracking-widest flex items-center gap-1">
+                            <i class="fa-solid fa-fire text-rose-500"></i> BEST SELLER
+                        </div>
+
+                        <div class="absolute bottom-3 right-3 bg-emerald-500/20 backdrop-blur-md text-emerald-400 text-[9px] font-bold px-2.5 py-1 rounded-lg border border-emerald-500/30 flex items-center gap-1">
+                            <i class="fa-solid fa-truck"></i> Spedizione 24/48h
                         </div>
                     </div>
 
-                    <!-- Italian Marketing Ad Copy -->
-                    <div class="p-4 bg-slate-950/60 border-t border-slate-800/80">
+                    <!-- Italian Ad Copy Description -->
+                    <div class="p-4 bg-slate-950/70 border-t border-slate-800/80">
                         <p class="text-xs text-slate-300 leading-relaxed font-medium italic">
                             "${item.adText}"
                         </p>
                     </div>
 
-                    <!-- Buy Now Button (Direct POD Link) -->
-                    <div class="p-4 pt-0">
-                        <a href="${item.checkoutLink}" target="_blank"
-                           class="w-full flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black py-3.5 rounded-xl text-xs shadow-xl shadow-amber-500/20 hover:opacity-95 transform active:scale-95 transition">
-                            <i class="fa-solid fa-cart-shopping text-sm"></i> ACQUISTA ORA / COMPRA SUBITO ➔
+                    <!-- BUY NOW BUTTON (Direct Order Link) -->
+                    <div class="p-4 pt-1">
+                        <a href="${item.checkoutLink}" target="_blank" rel="noopener font-black"
+                           class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 text-slate-950 font-black py-3.5 rounded-2xl text-xs shadow-xl shadow-amber-500/25 hover:brightness-110 active:scale-98 transition group">
+                            <i class="fa-solid fa-cart-shopping text-sm group-hover:animate-bounce"></i> ACQUISTA ORA - SCONTO 30% ➔
                         </a>
                     </div>
 
-                    <!-- Ads Section -->
-                    <div class="ad-wrapper-${index} p-3 bg-slate-950/80 border-t border-slate-800/80 text-center overflow-hidden space-y-4">
-                        <span class="text-[9px] text-slate-500 uppercase tracking-widest block mb-1">Sponsored Advertisement</span>
+                    <!-- Sponsor Adsterra Section -->
+                    <div class="ad-wrapper-${index} p-3 bg-slate-950/90 border-t border-slate-800/80 text-center overflow-hidden space-y-3">
+                        <span class="text-[9px] text-slate-500 uppercase tracking-widest block font-bold">Pubblicità Sponsorizzata</span>
                     </div>
                 `;
 
                 container.appendChild(card);
 
+                // Dynamically append Adsterra script elements
                 const adContainer = card.querySelector(`.ad-wrapper-${index}`);
                 
                 // Native Ad
@@ -158,13 +212,13 @@
             if (totalPages > 1) {
                 let paginationHtml = '';
                 if (page > 1) {
-                    paginationHtml += `<button onclick="changePage(${page - 1})" class="bg-slate-800 text-amber-400 px-4 py-2 rounded-xl text-xs font-bold shadow">Indietro (Prev)</button>`;
+                    paginationHtml += `<button onclick="changePage(${page - 1})" class="bg-slate-800 text-amber-400 px-4 py-2 rounded-xl text-xs font-bold shadow hover:bg-slate-700 transition">Indietro</button>`;
                 } else {
                     paginationHtml += `<div></div>`;
                 }
-                paginationHtml += `<span class="text-xs text-slate-400">Pagina ${page} di ${totalPages}</span>`;
+                paginationHtml += `<span class="text-xs text-slate-400 font-semibold">Pagina ${page} di ${totalPages}</span>`;
                 if (page < totalPages) {
-                    paginationHtml += `<button onclick="changePage(${page + 1})" class="bg-amber-500 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold shadow">Avanti (Next) ➔</button>`;
+                    paginationHtml += `<button onclick="changePage(${page + 1})" class="bg-amber-500 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold shadow hover:bg-amber-400 transition">Avanti ➔</button>`;
                 } else {
                     paginationHtml += `<div></div>`;
                 }
